@@ -1,0 +1,18 @@
+redis-sentinel-alp:
+  build: redis-sentinel-alp
+  privileged: true
+  environment:
+    - prefix_network=172.20.0
+    - type_redis=redis-sentinel
+    - init_ip=3
+    - last_ip=8
+  expose:
+   - "6379"
+   - "26379"
+
+  environment:
+    - prefix_network=172.20.0
+    - redis_master="172.20.0.2"
+  expose:
+   - "6379"
+   - "26379"
